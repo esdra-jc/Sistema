@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BobinaTrack</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><button id="burger" aria-label="Abrir menu">☰</button><b>BobinaTrack</b></header>
+<nav id="side">
+  <div class="brand"><h1>🧵 BobinaTrack</h1><small>Cada bobina no lugar certo.</small><small id="emp"></small></div>
+  <div id="menu"></div>
+</nav>
+<main>
+  <section id="v-painel"><h2>Painel</h2><div id="cards" class="cards"></div><h3>Últimas movimentações</h3><div id="p-ult"></div></section>
+
+  <section id="v-cadastro"><h2>Cadastrar / editar bobina</h2>
+    <form id="fcad" class="grid"></form>
+  </section>
+
+  <section id="v-consulta"><h2>Consultar bobinas</h2>
+    <div class="bar"><input id="q1" placeholder="Buscar por código, lote, material, local…"><select id="fsit"></select></div>
+    <div id="t-cons"></div>
+  </section>
+
+  <section id="v-localizar"><h2>Localizar bobina</h2>
+    <div class="bar"><input id="q2" placeholder="Digite parte do código, lote, material, fornecedor, local…"></div>
+    <div id="res"></div><div id="det" class="panel"></div>
+  </section>
+
+  <section id="v-mover"><h2>Registrar movimentação</h2>
+    <form id="fmov" class="grid"></form>
+  </section>
+
+  <section id="v-hist"><h2>Histórico</h2>
+    <div class="bar"><input id="hb" placeholder="Bobina"><input id="hde" type="date"><input id="hate" type="date"><input id="ho" placeholder="Origem"><input id="hd" placeholder="Destino"></div>
+    <div id="t-hist"></div>
+    <p class="note">⚠ O histórico fica salvo apenas neste navegador e não é uma trilha de auditoria inviolável: quem tem acesso ao navegador pode alterá-lo.</p>
+  </section>
+
+  <section id="v-alertas"><h2>Alertas e divergências</h2>
+    <h3>Localização desatualizada</h3><div id="t-stale"></div>
+    <h3>Registrar conferência física</h3><form id="fconf" class="grid"></form>
+    <h3>Divergências</h3><div id="t-div"></div>
+    <p class="note">Sem sensores ou RFID, o sistema não detecta movimentação física sozinho: ele mantém a última localização registrada e só sinaliza divergências encontradas em conferência.</p>
+  </section>
+
+  <section id="v-relat"><h2>Relatórios</h2>
+    <div class="bar"><input id="rde" type="date"><input id="rate" type="date"><input id="rmat" placeholder="Material"><input id="rgal" placeholder="Galpão"><input id="rsit" placeholder="Situação"></div>
+    <div class="bar"><button id="b-csvb">CSV: bobinas</button><button id="b-csvh">CSV: histórico</button><button id="b-json">Backup JSON</button></div>
+    <p id="rinfo" class="note"></p>
+  </section>
+
+  <section id="v-config"><h2>Configurações</h2>
+    <form id="fcfg" class="grid"></form>
+    <div class="bar"><button id="b-bkp">Fazer backup (JSON)</button><label class="btn">Restaurar backup<input id="b-rest" type="file" accept=".json" hidden></label></div>
+    <p id="cont" class="note"></p>
+    <p class="note">⚠ Os dados ficam no localStorage deste navegador/dispositivo. Não há sincronização entre celulares ou computadores: use o backup para levar os dados.</p>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
